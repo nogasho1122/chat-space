@@ -1,6 +1,6 @@
 ## messagesテーブル
 |Column|Type|constraint|index|
-|------|----|----------||
+|------|----|----------|-|
 |boby|text|||
 |image|string|||
 |group_id|references :group|foreign_key: true|○|
@@ -31,7 +31,7 @@
 
 ## group_membersテーブル
 |Column|Type|constraint|index|
-|------|----|----------||
+|------|----|----------|-|
 |group_id|references :group|foreign_key: true|○|
 |user_id|references :user|foreign_key: true|○|
 ### Association
