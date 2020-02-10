@@ -1,0 +1,41 @@
+.chat_main
+  .chat_main_header
+    .chat_main_header_left_box
+      %h2.chat_main_header_left_box_current_group
+        test
+      %ul.chat_main_header_left_box_member_list
+        Member:
+        %li.chat_main_header_left_box_member_list_member
+          Master
+    .chat_main_header_edit_btn
+      = link_to "#", class: "edit_user_btn" do
+        Edit
+  
+  
+  .chat_main_messages
+    .chat_main_messages_message
+      .chat_main_messages_message_upper_info
+        %p.chat_main_messages_message_upper_info_talker
+          SHO
+        %p.chat_main_messages_message_upper_info_date
+          2020/02/09
+      %p.chat_main_messages_message_text
+      おはよう
+
+    .chat_main_messages_message
+      .chat_main_messages_message_upper_info
+        %p.chat_main_messages_message_upper_info_talker
+          SHO
+        %p.chat_main_messages_message_upper_info_date
+          2020/02/09
+      %p.chat_main_messages_message_text
+      おはよう
+
+  .form
+    %form.new_message
+      .input_box
+        %input{type:"text",class: "input_box_text",placeholder: "type a message"}
+        %label{class: "input_box_image"}
+          = icon('fas','image')
+          %input{type: "file",class: "input_box_image_file"}
+      %input{type: "submit",class: "submit_btn"}
