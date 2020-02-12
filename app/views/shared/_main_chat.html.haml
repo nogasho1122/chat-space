@@ -2,40 +2,33 @@
   .chat_main_header
     .chat_main_header_left_box
       %h2.chat_main_header_left_box_current_group
-        test
+        = link_to group_messages_path(@group) do
+          = @group.name
       %ul.chat_main_header_left_box_member_list
         Member:
-        %li.chat_main_header_left_box_member_list_member
-          Master
+        %ul
+          -@group.users.each do |user|
+            %li=user.name
+          
     .chat_main_header_edit_btn
-      = link_to "#", class: "edit_user_btn" do
+      = link_to edit_group_path(@group) do
         Edit
   
   
   .chat_main_messages
-    .chat_main_messages_message
-      .chat_main_messages_message_upper_info
-        %p.chat_main_messages_message_upper_info_talker
-          SHO
-        %p.chat_main_messages_message_upper_info_date
-          2020/02/09
-      %p.chat_main_messages_message_text
-      おはよう
+    = render @messages
+    -# .chat_main_messages_message
+      -# .chat_main_messages_message_upper_info
+      -#   %p.chat_main_messages_message_upper_info_talker
+      -#   %p.chat_main_messages_message_upper_info_date
+      -# %p.chat_main_messages_message_text
 
-    .chat_main_messages_message
-      .chat_main_messages_message_upper_info
-        %p.chat_main_messages_message_upper_info_talker
-          SHO
-        %p.chat_main_messages_message_upper_info_date
-          2020/02/09
-      %p.chat_main_messages_message_text
-      おはよう
 
   .form
-    %form.new_message
+    = form_for [@group, @message] do |f|
       .input_box
-        %input{type:"text",class: "input_box_text",placeholder: "type a message"}
-        %label{class: "input_box_image"}
-          = icon('fas','image')
-          %input{type: "file",class: "input_box_image_file"}
-      %input{type: "submit",class: "submit_btn"}
+        = f.text_field :content, class: 'text', placeholder: 'type a message'
+        = f.label :image, class: 'image' do
+          = icon('fas', 'image', class: 'filed')
+          = f.file_field :image, class: 'icon'
+      = f.submit 'Send', class: 'submit_btn'

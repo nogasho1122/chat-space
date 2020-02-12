@@ -83,12 +83,24 @@
       &_current_group{
         font-size: 20px;
         margin-bottom: 15px;
+
+        a{
+          text-decoration: none;
+          color: #434a54;
+        }
       }
       
       &_member_list{
         font-size: 12px;
         color: #999999;
         display: flex;
+          ul{
+            display: flex;
+            li{
+              font-size: 12px;
+              padding-left: 5px;
+            }
+          }
       }
     }
       
@@ -139,29 +151,30 @@
   
   
   .form{
-    background-color: #d2d2d2;
+    height: 90px;
     padding: 20px 40px;
+    background-color: #ddd;
     
-    form{
+    .new_message{
       display: flex;
       .input_box{
         width: 100%;
         position: relative;
         
-          &_text{
+        .text{
             height: 50px;
             width: 100%;
             border-style: none;
             padding: 0 40px 0 10px;
           
           }
-          &_image{
+          .image{
             cursor: pointer;
             font-size: 1.3rem;
             position: absolute;
             top: 10px;
             right: 10px;
-            &_file{
+            .icon{
               display: none;
             }
           }
@@ -173,6 +186,8 @@
         background-color: #38aef9;
         color: white;
         cursor: pointer;
+
+        
     }
   }
 }
