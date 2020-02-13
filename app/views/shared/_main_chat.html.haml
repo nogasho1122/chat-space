@@ -2,8 +2,7 @@
   .chat_main_header
     .chat_main_header_left_box
       %h2.chat_main_header_left_box_current_group
-        = link_to group_messages_path(@group) do
-          = @group.name
+        = @group.name
       %ul.chat_main_header_left_box_member_list
         Member:
         %ul
