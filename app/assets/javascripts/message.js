@@ -19,12 +19,11 @@ $(function(){
       }
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
   };
 
   var buildHTML = function(message) {
-    console.log(message);
     if (message.content && message.image) {
 
       var html =
