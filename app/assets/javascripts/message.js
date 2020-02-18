@@ -144,6 +144,7 @@ $('#new_message').on('submit', function(e){
   .done(function(data){
     var html = buildHTML(data);
       $('.chat_main_messages').append(html);
+      $('form')[0].reset();
       $('.chat_main_messages').animate({ scrollTop: $('.chat_main_messages')[0].scrollHeight});
       $('.submit_btn').attr('disabled', false);
     })
